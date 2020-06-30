@@ -3,6 +3,10 @@
 GRPC Sample
 How implement a server with grpc and how to retrieve data from a client
 
+## Development
+
+Using Visual Studio Code just open the file called `gRPC_sample.code-workspace` and install dependencies in each project.
+
 ## Installation
 
 ```bash
