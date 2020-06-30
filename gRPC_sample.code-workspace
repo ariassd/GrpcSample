@@ -4,13 +4,13 @@
 	],
 	"settings": {
 		"files.exclude": {
-			"**/.git": false,
+			"**/.git": true,
 			"**/.svn": true,
 			"**/.hg": true,
 			"**/CVS": true,
 			"**/.DS_Store": true,
 			"**/dist": true,
-			"**/node_modules": false,
+			"**/node_modules": true,
 			"*.code-workspace": true
 		},
 		"explorerExclude.backup": null
