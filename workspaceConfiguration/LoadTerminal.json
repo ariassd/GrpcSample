@@ -1,0 +1,25 @@
+{
+    "version": "1.0.5",
+    "groups": [
+        {
+            "name": "gRPC Client Server",
+            "description": "gRPC Client Server",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Server",
+                    "path": "'/Users/luisarias/Documents/LuisArias/gRPC example/nestjs.micro.server'",
+                    "cmd": "npm run start:dev",
+                    "num": 0
+                },
+                {
+                    "name": "Client",
+                    "path": "'/Users/luisarias/Documents/LuisArias/gRPC example/nestjs.micro.client'",
+                    "cmd": "npm run start:dev",
+                    "num": 1
+                }
+
+            ]
+        }
+    ]
+}
