@@ -14,7 +14,13 @@ $ npm install --prefix nestjs.micro.client
 $ npm install --prefix nestjs.micro.server
 ```
 
-## Running the app
+## Running the app option 1
+
+```bash
+$ sh run.sh
+```
+
+## Running the app option 2
 
 ```bash
 # development

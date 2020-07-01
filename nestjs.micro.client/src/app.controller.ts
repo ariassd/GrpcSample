@@ -4,22 +4,16 @@ import {
   Post,
   Body,
   OnModuleInit,
-  Param,
+  Get,
 } from '@nestjs/common';
 import { IGrpcService } from './grpc.interface';
-import {
-  ClientGrpc,
-  Client,
-  ClientProxyFactory,
-  ClientOptions,
-  Transport,
-} from '@nestjs/microservices';
+import { ClientGrpc, Client } from '@nestjs/microservices';
 import { microserviceOptions } from './grpc.options';
-import { join } from 'path';
+import { service } from './constants';
 
 @Controller()
 export class AppController implements OnModuleInit {
-  private logger = new Logger('AppController');
+  private logger = new Logger('Client app controller');
 
   @Client(microserviceOptions) // <-- Add
   private client: ClientGrpc; // <-- this
@@ -46,5 +40,22 @@ export class AppController implements OnModuleInit {
     this.logger.log('Adding ' + JSON.stringify(data));
     // return this.mathService.accumulate(data);  // <-- Change this
     return this.grpcService.accumulate({ data }); // <-- to this
+  }
+
+  @Get('help')
+  async getHelp() {
+    return `
+This client exposes the follow commands
+----
+Add: It adds all the numbers in the list
+POST: http://localhost:${service.port}/add.
+BODY: {"data":[1,2,3]}
+EG: curl -d '{"data":[1,2,3]}' -H "Content-Type: application/json" -X POST http://localhost:${service.port}/add
+
+
+----
+How to run services separately for debugging purposes and see outputs type the follow command:
+
+    `;
   }
 }

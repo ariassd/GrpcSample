@@ -3,16 +3,18 @@ import { MathService } from './math.service';
 // import { MessagePattern } from '@nestjs/microservices'; <-- Change this
 import { GrpcMethod } from '@nestjs/microservices'; //     <-- to this
 
-interface INumberArray { //      <--
+interface INumberArray {
+  //      <--
   data: number[]; //             <--   Add these
 } //                             <--   two
-interface ISumOfNumberArray { // <--   interfaces
+interface ISumOfNumberArray {
+  // <--   interfaces
   sum: number; //                <--
 } //                             <--
 
 @Controller()
 export class AppController {
-  private logger = new Logger('AppController');
+  private logger = new Logger('server app controller');
 
   constructor(private mathService: MathService) {}
 
@@ -23,7 +25,8 @@ export class AppController {
   //   this.logger.log('Adding ' + data.toString());  <--  and return type to match
   //   return this.mathService.accumulate(data);      <--  .proto file
   // }                                                <--
-  accumulate(numberArray: INumberArray, metadata: any): ISumOfNumberArray { // <--
+  accumulate(numberArray: INumberArray, metadata: any): ISumOfNumberArray {
+    // <--
     this.logger.log('Adding ' + numberArray.data.toString()); //               <--  Should look
     return { sum: this.mathService.accumulate(numberArray.data) }; //          <--  like this
   } //                                                                         <--
