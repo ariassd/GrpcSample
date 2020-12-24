@@ -13,6 +13,11 @@
 			"**/node_modules": true,
 			"*.code-workspace": true
 		},
-		"explorerExclude.backup": null
+		"explorerExclude.backup": null,
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#0E3507",
+			"titleBar.activeBackground": "#134B0A",
+			"titleBar.activeForeground": "#F3FDF1"
+		}
 	}
 }
